@@ -1,4 +1,4 @@
-import { Manager } from "socket.io-client"
+import { Manager, Socket } from "socket.io-client"
 
 
 export const connectToServer = () => {
@@ -7,6 +7,20 @@ export const connectToServer = () => {
 
    const socket = manager.socket('/');
 
-   console.log({ socket });
+    addListeners( socket );
+
+}
+
+const addListeners = ( socket: Socket ) => {
+
+    const serverStatusLabel = document.querySelector('#server-status')!;
+
+    socket.on('connect', () => {
+        serverStatusLabel.innerHTML = 'connected';
+    });
+
+    socket.on('disconnect', () => {
+        serverStatusLabel.innerHTML = 'disconnected';
+    });
 
 }
