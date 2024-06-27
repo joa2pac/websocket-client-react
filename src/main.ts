@@ -8,6 +8,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
    <span id="server-status">offline</span>
 
+   <ul id="clients-ul">
+    <li>
+    </li>
+   </ul>
+
 
   </div>
 `
