@@ -13,6 +13,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </li>
    </ul>
 
+    <form id="message-form">
+      <input placerholder="message" id="message-input" />
+    </form>
 
   </div>
 `
